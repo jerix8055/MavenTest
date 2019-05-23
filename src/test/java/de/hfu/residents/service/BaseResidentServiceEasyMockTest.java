@@ -18,5 +18,6 @@ public class BaseResidentServiceEasyMockTest {
 		Resident filter = new Resident();
 		filter.setGivenName("Ma*");
 		baseTest.getUniqueResident(filter);
+		verify(residentRepositoryMock);
 	}
 }
