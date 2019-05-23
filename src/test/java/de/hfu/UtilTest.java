@@ -19,8 +19,12 @@ public class UtilTest {
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void testIstErstesHalbjahrUnerlaubteWerte() {
+	public void testIstErstesHalbjahrUnerlaubteWerteAnfang() {
 		Util.istErstesHalbjahr(0);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testIstErstesHalbjahrUnerlaubteWerteEnde() {
 		Util.istErstesHalbjahr(13);
 	}
 

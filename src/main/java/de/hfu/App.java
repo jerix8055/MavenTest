@@ -2,8 +2,7 @@ package de.hfu;
 import java.io.*;
 
 /**
- * Hello world!
- *
+ *Ausgabe der eingegebenen Zeichen in Grossbuchstaben
  */
 public class App 
 {
