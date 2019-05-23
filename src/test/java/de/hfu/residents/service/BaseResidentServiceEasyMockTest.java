@@ -10,7 +10,6 @@ public class BaseResidentServiceEasyMockTest {
 	@Test(expected=ResidentServiceException.class)
 	public void test() throws ResidentServiceException{
 		ResidentRepository residentRepositoryMock = createMock(ResidentRepository.class);
-		//residentRepositoryMock.getResidents().add(new Resident("Max", "Mustermann", "Musterstraße", "Musterstadt", new Date(20000)));
 		expect(residentRepositoryMock.getResidents()).andReturn(null);
 		replay(residentRepositoryMock);
 		BaseResidentService baseTest = new BaseResidentService();

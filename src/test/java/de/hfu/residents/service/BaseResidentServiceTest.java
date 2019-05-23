@@ -1,5 +1,7 @@
 package de.hfu.residents.service;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Date;
 
 import org.junit.Test;
@@ -62,7 +64,7 @@ public class BaseResidentServiceTest {
 		baseTest.setResidentRepository(stub);
 		Resident filter = new Resident();
 		filter.setGivenName("Ma*");
-		baseTest.getFilteredResidentsList(filter);
+		assertEquals(3, baseTest.getFilteredResidentsList(filter).size());
 	}
 	@Test
 	public void testGetFilteredResidentsList2() {
@@ -71,7 +73,7 @@ public class BaseResidentServiceTest {
 		baseTest.setResidentRepository(stub);
 		Resident filter = new Resident();
 		filter.setFamilyName("Ka*");
-		baseTest.getFilteredResidentsList(filter);
+		assertEquals(2, baseTest.getFilteredResidentsList(filter).size());
 	}
 	@Test
 	public void testGetFilteredResidentsList3() {
@@ -80,7 +82,7 @@ public class BaseResidentServiceTest {
 		baseTest.setResidentRepository(stub);
 		Resident filter = new Resident();
 		filter.setStreet("*straße");
-		baseTest.getFilteredResidentsList(filter);
+		assertEquals(4, baseTest.getFilteredResidentsList(filter).size());
 	}
 	@Test
 	public void testGetFilteredResidentsList4() {
@@ -88,7 +90,7 @@ public class BaseResidentServiceTest {
 		BaseResidentService baseTest = new BaseResidentService();
 		baseTest.setResidentRepository(stub);
 		Resident filter = new Resident();
-		filter.setDateOfBirth(new Date(320000));
-		baseTest.getFilteredResidentsList(filter);
+		filter.setDateOfBirth(new Date(1989,1,1));
+		assertEquals(1, baseTest.getFilteredResidentsList(filter).size());
 	}
 }
